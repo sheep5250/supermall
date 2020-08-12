@@ -1,11 +1,9 @@
 <template>
   <div>
     <div class="block">
-      <el-carousel trigger="click" height="180px">
-        <el-carousel-item v-for="item in banners" :key="item.image">
-          <a :href="item.link">
-            <img :src="item.image" style="width:100%;height:100%" alt @load="imgLoad" />
-          </a>
+      <el-carousel trigger="click" height="350px">
+        <el-carousel-item v-for="item in banners" :key="item">
+            <img :src="item" class="img-item" />
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -29,12 +27,12 @@ export default {
     }
   },
   methods: {
-    imgLoad() {
-      if (!this.isLoad) {
-        this.$emit("imageLoad");
-        this.isLoad=true
-      }
-    }
+    // imgLoad() {
+    //   if (!this.isLoad) {
+    //     this.$emit("imageLoad");
+    //     this.isLoad=true
+    //   }
+    // }
   }
 };
 </script>
@@ -47,5 +45,11 @@ export default {
 .el-carousel__item:nth-child(2n + 1) {
   background-color: #d3dce6;
 }
-
+.el-carousel__button{
+  width: 10px;
+}
+/* .img-item{
+    width: 100%;
+    height: 100%;
+} */
 </style>

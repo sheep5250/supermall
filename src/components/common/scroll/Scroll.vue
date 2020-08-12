@@ -30,9 +30,16 @@ export default {
         this.scroll.on('scroll',(position)=>{
             this.$emit('scrollposition',position)
         }),
+        // 监听到滚动到底部
         this.scroll.on('pullingUp',()=>{
            this.$emit('pullingUp')
         })
+    },
+    methods:{
+        refresh(){
+            // console.log("111");
+            this.scroll&&this.scroll.refresh()
+        }
     }
 }
 </script>
